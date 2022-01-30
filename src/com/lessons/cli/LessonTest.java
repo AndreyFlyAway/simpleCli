@@ -36,11 +36,13 @@ public class LessonTest {
                 System.out.println("Wrong command");
                 cmdToExecute = new HelpCmd();
             }
+            // TODO: I suppose no need to use exception, I tried it for practice
             try {
                 cmdToExecute.doWork();
             } catch (WrongCommandClassUsing e) {
-                e.printStackTrace();
-                throw e;
+                System.out.println(e.getMessage());
+//                e.printStackTrace();
+//                throw e;
             }
         }
         System.out.println("End of work.");
