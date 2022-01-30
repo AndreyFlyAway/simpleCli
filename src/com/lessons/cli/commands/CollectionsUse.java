@@ -57,14 +57,14 @@ public class CollectionsUse implements Command {
                 elements.put(cmdArgs[2], cmdArgs[3]);
                 break;
             case REMOVE:
+                // TODO: print message if there is no element with this key to remove
                 elements.remove(cmdArgs[2]);
                 break;
             case CLEAR:
                 elements.clear();
                 break;
             case GET:
-                var val = elements.getOrDefault(cmdArgs[2], "No such key in map.");
-                System.out.println(val);
+                System.out.println(elements.getOrDefault(cmdArgs[2], "No such key in map."));
                 break;
             case SHOWALL:
                 showAll();
@@ -134,7 +134,7 @@ public class CollectionsUse implements Command {
             System.out.println("No such type of map available!");
         }
 
-        System.out.println("Now type: " + elements.getClass());
+        System.out.println("Type of map: " + elements.getClass());
     }
 
     private static enum Operation {
